@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bc8U3sYH+0w=",
+  "dgSpecHash": "OGxC7rk453Q=",
   "success": true,
-  "projectFilePath": "C:\\Users\\TahhaButt\\source\\repos\\Day 2\\firstTestCase\\firstTestCase\\firstTestCase.csproj",
+  "projectFilePath": "C:\\Users\\TahhaButt\\source\\repos\\Day 2 & 3\\firstTestCase\\firstTestCase\\firstTestCase.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TahhaButt\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",
     "C:\\Users\\TahhaButt\\.nuget\\packages\\microsoft.codecoverage\\17.11.1\\microsoft.codecoverage.17.11.1.nupkg.sha512",
