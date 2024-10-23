@@ -52,10 +52,10 @@ namespace firstTestCase.Tests
         [Test]
         public void SearchItemMethodTwo()
         {
+            //First Test Case
             driver.Url = "https://www.edgewordstraining.co.uk/demo-site/";
 
             IWebElement searchBar = driver.FindElement(By.CssSelector("#woocommerce-product-search-field-0"));
-
             searchBar.SendKeys("Cap");
             searchBar.SendKeys(Keys.Enter);
 
@@ -64,10 +64,15 @@ namespace firstTestCase.Tests
             driver.FindElement(By.LinkText("Cart")).Click();
             driver.FindElement(By.LinkText("×")).Click();
 
+            //Synchronisation
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             wait.Until(drv => drv.FindElement(By.PartialLinkText("Return to shop")).Displayed);
 
-            driver.FindElement(By.PartialLinkText("Return to shop")).Click();            
+            driver.FindElement(By.PartialLinkText("Return to shop")).Click();
+
+            //Assertions
+            driver.FindElement(By.LinkText("Cart")).Click();
+            Assert.That(driver.FindElement(By.CssSelector(".cart-empty")).Displayed);
 
             Console.WriteLine("Test complete");
         }
