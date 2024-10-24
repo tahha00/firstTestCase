@@ -7,50 +7,16 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
+using firstTestCase.Utilities;
 
 namespace firstTestCase.Tests
 {
-    internal class ProductSearch
+    internal class ProductSearch : Utilities.TestBaseClass
     {
 
-        IWebDriver driver;
 
-        [SetUp]
-        public void Setup()
-        {
-            ChromeOptions options = new ChromeOptions();
-            options.AddArgument("--start-maximized");
-
-            driver = new ChromeDriver(options);
-
-            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-
-        }
-
-        [TearDown]
-
-        public void TearDown()
-        {
-            Thread.Sleep(5000);
-            driver.Quit();
-        }
-
-        //[Test]
-        //public void SearchItem()
-        //{
-        //    driver.Url = "https://www.edgewordstraining.co.uk/demo-site/";
-
-        //    IWebElement searchBar = driver.FindElement(By.CssSelector("#woocommerce-product-search-field-0"));
-
-        //    Actions actions = new Actions(driver);
-        //    IAction capSearchAction = actions.SendKeys(searchBar, "Cap").SendKeys(Keys.Enter);
-        //    capSearchAction.Perform();
-
-        //    Console.WriteLine("Test complete");
-        //}
-
-        [Test]
-        public void SearchItemMethodTwo()
+        [Test, Category("Functional")]
+        public void SearchItem()
         {
             //First Test Case
             driver.Url = "https://www.edgewordstraining.co.uk/demo-site/";
@@ -76,5 +42,19 @@ namespace firstTestCase.Tests
 
             Console.WriteLine("Test complete");
         }
+
+        //[Test]
+        //public void SearchItemMethodTwo()
+        //{
+        //    driver.Url = "https://www.edgewordstraining.co.uk/demo-site/";
+
+        //    IWebElement searchBar = driver.FindElement(By.CssSelector("#woocommerce-product-search-field-0"));
+
+        //    Actions actions = new Actions(driver);
+        //    IAction capSearchAction = actions.SendKeys(searchBar, "Cap").SendKeys(Keys.Enter);
+        //    capSearchAction.Perform();
+
+        //    Console.WriteLine("Test complete");
+        //}
     }
 }
