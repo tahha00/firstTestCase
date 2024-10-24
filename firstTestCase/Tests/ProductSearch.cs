@@ -39,9 +39,26 @@ namespace firstTestCase.Tests
             //returnToShopButton.Click();
             WaitForElDisplayed(driver, By.PartialLinkText("Return to shop"), 10).Click();
 
-
-            //Assertions
             driver.FindElement(By.LinkText("Cart")).Click();
+
+            //Screenshot
+
+            // For full screen:
+            ITakesScreenshot ssDriver = driver as ITakesScreenshot;
+            var screenshot = ssDriver.GetScreenshot();
+            screenshot.SaveAsFile(@"C:\Users\TahhaButt\source\repos\Day 2 & 3\firstTestCase\Screenshots\fullpage.png");
+
+            //Or easier method for full screen - not working right now, need to check:
+            //var ss = driver.TakeScreenshot();
+            //ss.SaveAsFile(@"C:\Users\TahhaButt\source\repos\Day 2 & 3\firstTestCase\Screenshots\fullPage2.png");
+
+            //For only cart element:
+            IWebElement cartEmpty = driver.FindElement(By.CssSelector("#post-5 > div > div > p.cart-empty.woocommerce-info"));
+            var ssCart = cartEmpty as ITakesScreenshot;
+            var cartScreenshot = ssCart.GetScreenshot();
+            cartScreenshot.SaveAsFile(@"C:\Users\TahhaButt\source\repos\Day 2 & 3\firstTestCase\Screenshots\cartEmpty.png");
+
+            //Assertions (added before SS).
             Assert.That(driver.FindElement(By.CssSelector(".cart-empty")).Displayed);
 
             Console.WriteLine("Test complete");

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace firstTestCase.Utilities
 {
-    internal static class Helpers
+    internal static class HelpersStatic
     {
         public static IWebElement WaitForElDisplayed(IWebDriver driver, By locator, int timeToWait = 3)
         {
