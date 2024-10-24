@@ -18,7 +18,7 @@ namespace firstTestCase.Tests
         [Test, Category("Functional")]
         public void SearchItem()
         {
-            //First Test Case
+            //FIRST TEST CASE
             driver.Url = "https://www.edgewordstraining.co.uk/demo-site/";
 
             IWebElement searchBar = driver.FindElement(By.CssSelector("#woocommerce-product-search-field-0"));
@@ -26,11 +26,13 @@ namespace firstTestCase.Tests
             searchBar.SendKeys(Keys.Enter);
 
             //driver.FindElement(By.CssSelector("#product-29 > div.summary.entry-summary > form > button")).Click();
-            driver.FindElement(By.Name("add-to-cart")).Click();
+            //driver.FindElement(By.Name("add-to-cart")).Click();
+            WaitForElDisplayed(driver, By.Name("add-to-cart"), 10).Click();
             driver.FindElement(By.LinkText("Cart")).Click();
             driver.FindElement(By.LinkText("×")).Click();
 
-            //Synchronisation
+            //SYNCHRONISATION
+
             //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             //wait.Until(drv => drv.FindElement(By.PartialLinkText("Return to shop")).Displayed);
             //driver.FindElement(By.PartialLinkText("Return to shop")).Click();
@@ -41,7 +43,7 @@ namespace firstTestCase.Tests
 
             driver.FindElement(By.LinkText("Cart")).Click();
 
-            //Screenshot
+            //SCREENSHOT
 
             // For full screen:
             ITakesScreenshot ssDriver = driver as ITakesScreenshot;
@@ -58,7 +60,8 @@ namespace firstTestCase.Tests
             var cartScreenshot = ssCart.GetScreenshot();
             cartScreenshot.SaveAsFile(@"C:\Users\TahhaButt\source\repos\Day 2 & 3\firstTestCase\Screenshots\cartEmpty.png");
 
-            //Assertions (added before SS).
+            //ASSERTIONS (added before SS).
+
             Assert.That(driver.FindElement(By.CssSelector(".cart-empty")).Displayed);
 
             Console.WriteLine("Test complete");
@@ -79,3 +82,5 @@ namespace firstTestCase.Tests
         //}
     }
 }
+
+

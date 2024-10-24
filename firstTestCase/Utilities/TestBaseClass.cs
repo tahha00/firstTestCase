@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +17,12 @@ namespace firstTestCase.Utilities
         [SetUp]
         public void Setup()
         {
-            ChromeOptions options = new ChromeOptions();
-            options.AddArgument("--start-maximized");
+            //ChromeOptions options = new ChromeOptions();
+            //options.AddArgument("--start-maximized");
 
-            driver = new ChromeDriver(options);
+            //driver = new ChromeDriver(options);
+
+            driver = new FirefoxDriver();
 
             //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
