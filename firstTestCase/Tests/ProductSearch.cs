@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using firstTestCase.Utilities;
+using static firstTestCase.Utilities.HelpersStatic;
 
 namespace firstTestCase.Tests
 {
     internal class ProductSearch : Utilities.TestBaseClass
     {
-
 
         [Test, Category("Functional")]
         public void SearchItem()
@@ -31,10 +31,14 @@ namespace firstTestCase.Tests
             driver.FindElement(By.LinkText("×")).Click();
 
             //Synchronisation
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            wait.Until(drv => drv.FindElement(By.PartialLinkText("Return to shop")).Displayed);
+            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            //wait.Until(drv => drv.FindElement(By.PartialLinkText("Return to shop")).Displayed);
+            //driver.FindElement(By.PartialLinkText("Return to shop")).Click();
 
-            driver.FindElement(By.PartialLinkText("Return to shop")).Click();
+            //var returnToShopButton = WaitForElDisplayed(driver, By.PartialLinkText("Return to shop"), 10);
+            //returnToShopButton.Click();
+            WaitForElDisplayed(driver, By.PartialLinkText("Return to shop"), 10).Click();
+
 
             //Assertions
             driver.FindElement(By.LinkText("Cart")).Click();
