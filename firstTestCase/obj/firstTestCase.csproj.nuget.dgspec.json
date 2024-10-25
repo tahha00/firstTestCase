@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TahhaButt\\source\\repos\\Day 2 & 3\\firstTestCase\\firstTestCase\\firstTestCase.csproj": {}
+    "C:\\Users\\TahhaButt\\source\\repos\\Day 2 & 3 & 4 Incomplete Wd course\\firstTestCase\\firstTestCase\\firstTestCase.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TahhaButt\\source\\repos\\Day 2 & 3\\firstTestCase\\firstTestCase\\firstTestCase.csproj": {
+    "C:\\Users\\TahhaButt\\source\\repos\\Day 2 & 3 & 4 Incomplete Wd course\\firstTestCase\\firstTestCase\\firstTestCase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TahhaButt\\source\\repos\\Day 2 & 3\\firstTestCase\\firstTestCase\\firstTestCase.csproj",
+        "projectUniqueName": "C:\\Users\\TahhaButt\\source\\repos\\Day 2 & 3 & 4 Incomplete Wd course\\firstTestCase\\firstTestCase\\firstTestCase.csproj",
         "projectName": "firstTestCase",
-        "projectPath": "C:\\Users\\TahhaButt\\source\\repos\\Day 2 & 3\\firstTestCase\\firstTestCase\\firstTestCase.csproj",
+        "projectPath": "C:\\Users\\TahhaButt\\source\\repos\\Day 2 & 3 & 4 Incomplete Wd course\\firstTestCase\\firstTestCase\\firstTestCase.csproj",
         "packagesPath": "C:\\Users\\TahhaButt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TahhaButt\\source\\repos\\Day 2 & 3\\firstTestCase\\firstTestCase\\obj\\",
+        "outputPath": "C:\\Users\\TahhaButt\\source\\repos\\Day 2 & 3 & 4 Incomplete Wd course\\firstTestCase\\firstTestCase\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -56,12 +56,6 @@
             "NUnit": {
               "target": "Package",
               "version": "[4.2.2, )"
-            },
-            "NUnit.Analyzers": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[4.3.0, )"
             },
             "NUnit3TestAdapter": {
               "target": "Package",

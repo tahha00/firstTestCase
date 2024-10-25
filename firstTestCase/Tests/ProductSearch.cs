@@ -9,6 +9,8 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using firstTestCase.Utilities;
 using static firstTestCase.Utilities.HelpersStatic;
+using firstTestCase.PageObjects;
+using OpenQA.Selenium.BiDi.Modules.Script;
 
 namespace firstTestCase.Tests
 {
@@ -48,7 +50,7 @@ namespace firstTestCase.Tests
             // For full screen:
             ITakesScreenshot ssDriver = driver as ITakesScreenshot;
             var screenshot = ssDriver.GetScreenshot();
-            screenshot.SaveAsFile(@"C:\Users\TahhaButt\source\repos\Day 2 & 3\firstTestCase\Screenshots\fullpage.png");
+            screenshot.SaveAsFile(@"C:\Users\TahhaButt\source\repos\Day 2 & 3 & 4 Incomplete Wd course\firstTestCase\Screenshots\fullpage.png");
 
             //Or easier method for full screen - not working right now, need to check:
             //var ss = driver.TakeScreenshot();
@@ -58,13 +60,45 @@ namespace firstTestCase.Tests
             IWebElement cartEmpty = driver.FindElement(By.CssSelector("#post-5 > div > div > p.cart-empty.woocommerce-info"));
             var ssCart = cartEmpty as ITakesScreenshot;
             var cartScreenshot = ssCart.GetScreenshot();
-            cartScreenshot.SaveAsFile(@"C:\Users\TahhaButt\source\repos\Day 2 & 3\firstTestCase\Screenshots\cartEmpty.png");
+            cartScreenshot.SaveAsFile(@"C:\Users\TahhaButt\source\repos\Day 2 & 3 & 4 Incomplete Wd course\firstTestCase\Screenshots\cartEmpty.png");
 
             //ASSERTIONS (added before SS).
 
             Assert.That(driver.FindElement(By.CssSelector(".cart-empty")).Displayed);
 
             Console.WriteLine("Test complete");
+        }
+
+        [Test]
+        public void LinksSanityTest()
+        {
+            driver.Url = "https://www.edgewordstraining.co.uk/demo-site/";
+
+            HomePagePOM topNav = new HomePagePOM(driver);
+
+            topNav.NavClick(topNav.Home);
+            Assert.That(driver.Title, Does.Contain("Edgewords Shop"));
+
+            topNav.NavClick(topNav.Shop);
+            Assert.That(driver.Title, Does.Contain("Shop"));
+
+            topNav.NavClick(topNav.Cart);
+            Assert.That(driver.Title, Does.Contain("Cart"));
+
+            IWebElement searchBar = driver.FindElement(By.CssSelector("#woocommerce-product-search-field-0"));
+            searchBar.SendKeys("cap");
+            searchBar.SendKeys(Keys.Enter);
+            WaitForElDisplayed(driver, By.Name("add-to-cart"), 10).Click();
+
+            topNav.NavClick(topNav.Checkout);
+            Assert.That(driver.Title, Does.Contain("Checkout"));
+
+            topNav.NavClick(topNav.MyAccount);
+            Assert.That(driver.Title, Does.Contain("My account"));
+
+            topNav.NavClick(topNav.Blog);
+            Assert.That(driver.Title, Does.Contain("Blog"));
+
         }
 
         //[Test]

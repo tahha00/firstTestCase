@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OGxC7rk453Q=",
+  "dgSpecHash": "hG/Chv/dLZk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\TahhaButt\\source\\repos\\Day 2 & 3\\firstTestCase\\firstTestCase\\firstTestCase.csproj",
+  "projectFilePath": "C:\\Users\\TahhaButt\\source\\repos\\Day 2 & 3 & 4 Incomplete Wd course\\firstTestCase\\firstTestCase\\firstTestCase.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TahhaButt\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",
     "C:\\Users\\TahhaButt\\.nuget\\packages\\microsoft.codecoverage\\17.11.1\\microsoft.codecoverage.17.11.1.nupkg.sha512",
@@ -11,7 +11,6 @@
     "C:\\Users\\TahhaButt\\.nuget\\packages\\microsoft.testplatform.testhost\\17.11.1\\microsoft.testplatform.testhost.17.11.1.nupkg.sha512",
     "C:\\Users\\TahhaButt\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\TahhaButt\\.nuget\\packages\\nunit\\4.2.2\\nunit.4.2.2.nupkg.sha512",
-    "C:\\Users\\TahhaButt\\.nuget\\packages\\nunit.analyzers\\4.3.0\\nunit.analyzers.4.3.0.nupkg.sha512",
     "C:\\Users\\TahhaButt\\.nuget\\packages\\nunit3testadapter\\4.6.0\\nunit3testadapter.4.6.0.nupkg.sha512",
     "C:\\Users\\TahhaButt\\.nuget\\packages\\selenium.webdriver\\4.25.0\\selenium.webdriver.4.25.0.nupkg.sha512",
     "C:\\Users\\TahhaButt\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512",
