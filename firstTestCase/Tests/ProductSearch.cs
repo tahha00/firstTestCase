@@ -75,27 +75,29 @@ namespace firstTestCase.Tests
             driver.Url = "https://www.edgewordstraining.co.uk/demo-site/";
 
             HomePagePOM topNav = new HomePagePOM(driver);
-            ItemPagePOM itemPage = new ItemPagePOM(driver);
 
 
-            topNav.NavClick(topNav.Home);
+            topNav.NavigateTo(HomePagePOM.NavLinks.Home);
             Assert.That(driver.Title, Does.Contain("Edgewords Shop"));
 
-            topNav.NavClick(topNav.Shop);
+            topNav.NavigateTo(HomePagePOM.NavLinks.Shop);
             Assert.That(driver.Title, Does.Contain("Shop"));
 
-            topNav.NavClick(topNav.Cart);
+            topNav.NavigateTo(HomePagePOM.NavLinks.Cart);
             Assert.That(driver.Title, Does.Contain("Cart"));
 
             topNav.Search("cap");
+
+            ItemPagePOM itemPage = new ItemPagePOM(driver);
             itemPage.AddToCart();
-            topNav.NavClick(topNav.Checkout);
+
+            topNav.NavigateTo(HomePagePOM.NavLinks.Checkout);
             Assert.That(driver.Title, Does.Contain("Checkout"));
 
-            topNav.NavClick(topNav.MyAccount);
+            topNav.NavigateTo(HomePagePOM.NavLinks.MyAccount);
             Assert.That(driver.Title, Does.Contain("My account"));
 
-            topNav.NavClick(topNav.Blog);
+            topNav.NavigateTo(HomePagePOM.NavLinks.Blog);
             Assert.That(driver.Title, Does.Contain("Blog"));
 
         }

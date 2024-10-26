@@ -19,7 +19,7 @@ namespace firstTestCase.PageObjects
         }
 
         //Locators
-        public IWebElement _addToCart => WaitForElDisplayed(_driver, By.Name("add-to-cart"), 5);
+        private IWebElement _addToCart => WaitForElDisplayed(_driver, By.Name("add-to-cart"), 5);
 
         //Service methods
         public void AddToCart()
