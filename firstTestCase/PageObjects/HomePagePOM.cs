@@ -24,9 +24,7 @@ namespace firstTestCase.PageObjects
         public IWebElement Checkout => _driver.FindElement(By.LinkText("Checkout"));
         public IWebElement MyAccount => _driver.FindElement(By.LinkText("My account"));
         public IWebElement Blog => _driver.FindElement(By.LinkText("Blog"));
-
-        //public IWebElement AddCart => _driver.FindElement(By.LinkText("Add to cart"));
-        //public IWebElement SearchBar => _driver.FindElement(By.CssSelector("#woocommerce-product-search-field-0"));
+        public IWebElement SearchBar => _driver.FindElement(By.CssSelector("#woocommerce-product-search-field-0"));
 
 
         //Service methods
@@ -36,16 +34,11 @@ namespace firstTestCase.PageObjects
             element.Click();
         }
 
-        //public void AddToCart(IWebElement item)
-        //{
-        //    item.Click();
-        //}
-
-        //public void Search(string searchItem)
-        //{
-        //    SearchBar.Clear();
-        //    SearchBar.SendKeys(searchItem);
-        //    SearchBar.SendKeys(Keys.Enter);
-        //}
+        public void Search(string searchItem)
+        {
+            SearchBar.Clear();
+            SearchBar.SendKeys(searchItem);
+            SearchBar.SendKeys(Keys.Enter);
+        }
     }
 }

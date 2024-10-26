@@ -75,6 +75,8 @@ namespace firstTestCase.Tests
             driver.Url = "https://www.edgewordstraining.co.uk/demo-site/";
 
             HomePagePOM topNav = new HomePagePOM(driver);
+            ItemPagePOM itemPage = new ItemPagePOM(driver);
+
 
             topNav.NavClick(topNav.Home);
             Assert.That(driver.Title, Does.Contain("Edgewords Shop"));
@@ -85,11 +87,8 @@ namespace firstTestCase.Tests
             topNav.NavClick(topNav.Cart);
             Assert.That(driver.Title, Does.Contain("Cart"));
 
-            IWebElement searchBar = driver.FindElement(By.CssSelector("#woocommerce-product-search-field-0"));
-            searchBar.SendKeys("cap");
-            searchBar.SendKeys(Keys.Enter);
-            WaitForElDisplayed(driver, By.Name("add-to-cart"), 10).Click();
-
+            topNav.Search("cap");
+            itemPage.AddToCart();
             topNav.NavClick(topNav.Checkout);
             Assert.That(driver.Title, Does.Contain("Checkout"));
 
