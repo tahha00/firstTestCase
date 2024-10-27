@@ -78,27 +78,28 @@ namespace firstTestCase.Tests
 
 
             topNav.NavigateTo(HomePagePOM.NavLinks.Home);
-            Assert.That(driver.Title, Does.Contain("Edgewords Shop"));
+
+            BasePOM basePOM = new BasePOM(driver);
+            Assert.That(basePOM.GetTitle, Does.Contain("Edgewords Shop"));
 
             topNav.NavigateTo(HomePagePOM.NavLinks.Shop);
-            Assert.That(driver.Title, Does.Contain("Shop"));
+            Assert.That(basePOM.GetTitle, Does.Contain("Shop"));
 
             topNav.NavigateTo(HomePagePOM.NavLinks.Cart);
-            Assert.That(driver.Title, Does.Contain("Cart"));
+            Assert.That(basePOM.GetTitle, Does.Contain("Cart"));
 
             topNav.Search("cap");
-
             ItemPagePOM itemPage = new ItemPagePOM(driver);
             itemPage.AddToCart();
 
             topNav.NavigateTo(HomePagePOM.NavLinks.Checkout);
-            Assert.That(driver.Title, Does.Contain("Checkout"));
+            Assert.That(basePOM.GetTitle, Does.Contain("Checkout"));
 
             topNav.NavigateTo(HomePagePOM.NavLinks.MyAccount);
-            Assert.That(driver.Title, Does.Contain("My account"));
+            Assert.That(basePOM.GetTitle, Does.Contain("My account"));
 
             topNav.NavigateTo(HomePagePOM.NavLinks.Blog);
-            Assert.That(driver.Title, Does.Contain("Blog"));
+            Assert.That(basePOM.GetTitle, Does.Contain("Blog"));
 
         }
 
